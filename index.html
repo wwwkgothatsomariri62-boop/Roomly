@@ -718,8 +718,18 @@ img { display: block; max-width: 100%; }
 /* ============================================================
    ⚙️ CONFIG
    ============================================================ */
-const SUPABASE_URL = 'PASTE_YOUR_PROJECT_URL_HERE';
-const SUPABASE_ANON_KEY = 'PASTE_YOUR_ANON_KEY_HERE';
+const SUPABASE_URL = 'https://rqkrnohsykrrdytwjkph.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJxa3Jub2hzeWtycmR5dHdqa3BoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0ODc5MDQsImV4cCI6MjEwNTA2MzkwNH0.pcCRgJhkl7H240tXYabTFMVTpjFOd6k3ob1vBn5HNo4';
+const CONFIG_OK = true;
+
+if (!CONFIG_OK) {
+  document.addEventListener('DOMContentLoaded', () => {
+    const b = document.createElement('div');
+    b.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#a94b42;color:#fff;padding:14px;font-size:13px;z-index:9999;text-align:center;font-weight:600;';
+    b.textContent = '⚠️ Supabase not configured — replace SUPABASE_URL and SUPABASE_ANON_KEY.';
+    document.body.appendChild(b);
+  });
+}
 /* ============================================================ */
 
 const { createClient } = supabase;
